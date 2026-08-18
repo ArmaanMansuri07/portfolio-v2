@@ -59,10 +59,9 @@ export default function Strengths() {
       <div className="absolute right-0 top-1/3 -z-10 h-80 w-80 rounded-full bg-amber-300/[0.04] blur-[130px]" />
 
       <div className="mx-auto max-w-7xl">
-
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
@@ -89,9 +88,9 @@ export default function Strengths() {
           {strengths.map((strength, index) => (
             <motion.div
               key={strength.title}
-              initial={{ opacity: 0, y: 30 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.15 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{
                 duration: 0.5,
                 delay: index * 0.08,

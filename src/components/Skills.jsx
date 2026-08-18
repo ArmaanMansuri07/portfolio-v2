@@ -117,7 +117,7 @@ export default function Skills() {
 
                 {/* Heading */}
                 <motion.div
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true, amount: 0.2 }}
                     transition={{ duration: 0.6 }}
@@ -144,7 +144,7 @@ export default function Skills() {
                     {skillCategories.map((category, categoryIndex) => (
                         <motion.div
                             key={category.title}
-                            initial={{ opacity: 0, y: 30 }}
+                            initial={false}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, amount: 0.1 }}
                             transition={{
@@ -197,9 +197,9 @@ export default function Skills() {
 
                 {/* Bottom Statement */}
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={false}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: true, amount: 0.1 }}
                     transition={{ duration: 0.6 }}
                     className="mt-10 text-center"
                 >

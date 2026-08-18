@@ -1,9 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import {
   FiAward,
-  FiExternalLink,
   FiCalendar,
   FiArrowDownRight,
 } from "react-icons/fi";
@@ -56,10 +56,10 @@ export default function Certificates() {
 
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          viewport={{ once: true, amount: 0.1 }}
+          transition={{ duration: 0.5 }}
           className="mb-16"
         >
           <div className="flex items-end justify-between gap-6">
@@ -91,27 +91,21 @@ export default function Certificates() {
           {certificates.map((certificate, index) => (
             <motion.article
               key={certificate.number}
-              initial={{
-                opacity: 0,
-                x: index % 2 === 0 ? -35 : 35,
-              }}
-              whileInView={{
-                opacity: 1,
-                x: 0,
-              }}
+              initial={false}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{
                 once: true,
-                amount: 0.15,
+                amount: 0.05,
               }}
               transition={{
-                duration: 0.65,
-                delay: index * 0.08,
+                duration: 0.5,
+                delay: index * 0.06,
               }}
               className="group relative grid overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b12] lg:grid-cols-[0.9fr_1.1fr]"
             >
               {/* Number / Side */}
               <div className="relative flex min-h-[260px] flex-col justify-between overflow-hidden border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
-                
+
                 <div>
                   <span className="font-syne text-6xl font-bold tracking-tighter text-white/[0.06] transition duration-500 group-hover:text-amber-300/[0.10] sm:text-7xl">
                     {certificate.number}
@@ -138,7 +132,7 @@ export default function Certificates() {
 
               {/* Right Content */}
               <div className="grid gap-6 p-5 sm:p-7 md:grid-cols-[1fr_auto] md:items-center">
-                
+
                 {/* Certificate Details */}
                 <div className="order-2 md:order-1">
                   <p className="text-xs uppercase tracking-[0.18em] text-gray-600">
@@ -150,7 +144,7 @@ export default function Certificates() {
                   </p>
 
                   <div className="mt-5 flex items-center gap-2 text-sm text-gray-500">
-                    <FiCalendar className="text-amber-300" />
+                    <FiCalendar className="shrink-0 text-amber-300" />
                     {certificate.date}
                   </div>
 
@@ -166,10 +160,12 @@ export default function Certificates() {
                 {/* Certificate Preview */}
                 <div className="order-1 overflow-hidden rounded-xl border border-white/10 bg-[#0d1018] md:order-2 md:w-[260px]">
                   <div className="relative aspect-[4/3]">
-                    <img
+                    <Image
                       src={certificate.image}
                       alt={`${certificate.title} certificate`}
-                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+                      fill
+                      sizes="(max-width: 768px) 100vw, 260px"
+                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
                     />
 
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />

@@ -20,10 +20,9 @@ export default function Projects() {
       <div className="absolute left-0 top-1/4 -z-10 h-80 w-80 rounded-full bg-amber-300/[0.04] blur-[130px]" />
 
       <div className="mx-auto max-w-7xl">
-
         {/* Heading */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={false}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6 }}
@@ -50,7 +49,7 @@ export default function Projects() {
           {projects.map((project, index) => (
             <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 35 }}
+              initial={false}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.1 }}
               transition={{
@@ -65,14 +64,12 @@ export default function Projects() {
                   src={project.image}
                   alt={`${project.title} project screenshot`}
                   fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
+                  className="object-cover transition duration-700 group-hover:scale-105"
                 />
 
                 {/* Image Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-70" />
-
-               
 
                 {/* Hover Icon */}
                 <div className="absolute right-4 top-4 flex h-10 w-10 translate-y-2 items-center justify-center rounded-full border border-white/10 bg-black/50 text-white opacity-0 backdrop-blur-md transition duration-300 group-hover:translate-y-0 group-hover:opacity-100">
@@ -82,7 +79,6 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-5 sm:p-6">
-
                 <div className="flex items-start justify-between gap-4">
                   <h3 className="font-syne text-xl font-bold text-white sm:text-2xl">
                     {project.title}
@@ -131,7 +127,6 @@ export default function Projects() {
             </motion.article>
           ))}
         </div>
-
       </div>
     </section>
   );
