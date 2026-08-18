@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   FiCode,
   FiLayers,
@@ -19,14 +18,9 @@ export default function About() {
       <div className="absolute left-0 top-1/3 -z-10 h-72 w-72 rounded-full bg-amber-400/[0.04] blur-[120px]" />
 
       <div className="mx-auto max-w-7xl">
+
         {/* Section Heading */}
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
-        >
+        <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
             Get To Know Me
           </p>
@@ -36,30 +30,27 @@ export default function About() {
           </h2>
 
           <div className="mx-auto mt-5 h-px w-16 bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
-        </motion.div>
+        </div>
 
         {/* Main Content */}
         <div className="grid items-center gap-12 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+
           {/* Profile Image */}
-          <motion.div
-            initial={false}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7 }}
-            className="flex justify-center"
-          >
+          <div className="flex justify-center">
             <div className="relative">
+
               {/* Glow */}
               <div className="absolute inset-0 rounded-3xl bg-amber-300/10 blur-3xl" />
 
               {/* Image Container */}
               <div className="relative h-[320px] w-[280px] overflow-hidden rounded-3xl border border-white/10 bg-[#0a0d15] shadow-2xl shadow-black/40 sm:h-[380px] sm:w-[330px]">
+
                 <Image
                   src="/profile.jpg"
                   alt="Armaan Mansuri"
                   fill
                   sizes="(max-width: 640px) 280px, 330px"
-                  className="object-cover object-center transition duration-700 hover:scale-[1.03]"
+                  className="object-cover object-center"
                 />
 
                 {/* Image Overlay */}
@@ -80,15 +71,10 @@ export default function About() {
                 </p>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* Content */}
-          <motion.div
-            initial={false}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.15 }}
-            transition={{ duration: 0.7 }}
-          >
+          <div>
             <p className="text-lg leading-8 text-gray-300">
               I'm{" "}
               <span className="font-semibold text-white">
@@ -113,6 +99,7 @@ export default function About() {
 
             {/* Info Cards */}
             <div className="mt-9 grid gap-4 sm:grid-cols-2">
+
               {/* Development */}
               <div className="group rounded-2xl border border-white/10 bg-white/[0.025] p-5 transition duration-300 hover:-translate-y-1 hover:border-amber-300/30 hover:bg-white/[0.04]">
                 <div className="mb-4 flex items-center justify-between">
@@ -123,7 +110,9 @@ export default function About() {
                   <FiArrowUpRight className="text-gray-600 transition group-hover:text-amber-300" />
                 </div>
 
-                <h3 className="font-semibold text-white">Development</h3>
+                <h3 className="font-semibold text-white">
+                  Development
+                </h3>
 
                 <p className="mt-2 text-sm leading-6 text-gray-500">
                   Building responsive and scalable web experiences.
@@ -140,7 +129,9 @@ export default function About() {
                   <FiArrowUpRight className="text-gray-600 transition group-hover:text-amber-300" />
                 </div>
 
-                <h3 className="font-semibold text-white">UI & UX</h3>
+                <h3 className="font-semibold text-white">
+                  UI & UX
+                </h3>
 
                 <p className="mt-2 text-sm leading-6 text-gray-500">
                   Creating clean interfaces with a focus on usability.
@@ -184,8 +175,9 @@ export default function About() {
                   Turning requirements and ideas into practical solutions.
                 </p>
               </div>
+
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

@@ -1,6 +1,6 @@
+
 "use client";
 
-import { motion } from "framer-motion";
 import {
   FiMail,
   FiGithub,
@@ -19,14 +19,9 @@ export default function Contact() {
       <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-amber-300/[0.035] blur-[140px]" />
 
       <div className="mx-auto max-w-6xl">
+
         {/* Heading */}
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-14 text-center"
-        >
+        <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
             Get In Touch
           </p>
@@ -41,18 +36,14 @@ export default function Contact() {
             Have a project idea, opportunity or just want to connect?
             Feel free to reach out.
           </p>
-        </motion.div>
+        </div>
 
         {/* Contact Layout */}
         <div className="grid overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b12] lg:grid-cols-[0.85fr_1.15fr]">
+
           {/* LEFT */}
-          <motion.div
-            initial={false}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5 }}
-            className="relative flex flex-col justify-between border-b border-white/10 p-7 sm:p-10 lg:border-b-0 lg:border-r"
-          >
+          <div className="relative flex flex-col justify-between border-b border-white/10 p-7 sm:p-10 lg:border-b-0 lg:border-r">
+
             <div>
               <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl border border-amber-300/20 bg-amber-300/[0.05] text-amber-300">
                 <FiMail size={21} />
@@ -71,6 +62,7 @@ export default function Contact() {
             </div>
 
             <div className="mt-10">
+
               {/* Email */}
               <a
                 href="mailto:armaanmansuri0707@gmail.com"
@@ -81,12 +73,12 @@ export default function Contact() {
                     Email
                   </p>
 
-                  <p className="mt-1 break-all text-sm text-gray-300 transition group-hover:text-amber-300">
+                  <p className="mt-1 text-sm text-gray-300 transition group-hover:text-amber-300">
                     armaanmansuri0707@gmail.com
                   </p>
                 </div>
 
-                <FiArrowUpRight className="ml-3 shrink-0 text-gray-600 transition group-hover:text-amber-300" />
+                <FiArrowUpRight className="text-gray-600 transition group-hover:text-amber-300" />
               </a>
 
               {/* Socials */}
@@ -112,16 +104,10 @@ export default function Contact() {
                 </a>
               </div>
             </div>
-          </motion.div>
+          </div>
 
           {/* RIGHT - FORM */}
-          <motion.div
-            initial={false}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.1 }}
-            transition={{ duration: 0.5 }}
-            className="p-7 sm:p-10"
-          >
+          <div className="p-7 sm:p-10">
             <form
               action="mailto:armaanmansuri0707@gmail.com"
               method="POST"
@@ -194,9 +180,10 @@ export default function Contact() {
                 <FiSend className="transition-transform duration-300 group-hover:translate-x-1" />
               </button>
             </form>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>
   );
 }
+

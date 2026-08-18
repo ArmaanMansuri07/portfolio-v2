@@ -1,7 +1,6 @@
+
 "use client";
 
-import { motion } from "framer-motion";
-import Image from "next/image";
 import {
   FiAward,
   FiCalendar,
@@ -55,13 +54,7 @@ export default function Certificates() {
       <div className="mx-auto max-w-6xl">
 
         {/* Heading */}
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.1 }}
-          transition={{ duration: 0.5 }}
-          className="mb-16"
-        >
+        <div className="mb-16">
           <div className="flex items-end justify-between gap-6">
             <div>
               <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
@@ -84,30 +77,20 @@ export default function Certificates() {
             A collection of certifications, simulations and participation
             experiences from my learning journey.
           </p>
-        </motion.div>
+        </div>
 
         {/* Certificate Showcase */}
         <div className="space-y-8">
-          {certificates.map((certificate, index) => (
-            <motion.article
+          {certificates.map((certificate) => (
+            <article
               key={certificate.number}
-              initial={false}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{
-                once: true,
-                amount: 0.05,
-              }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.06,
-              }}
               className="group relative grid overflow-hidden rounded-[2rem] border border-white/10 bg-[#080b12] lg:grid-cols-[0.9fr_1.1fr]"
             >
               {/* Number / Side */}
               <div className="relative flex min-h-[260px] flex-col justify-between overflow-hidden border-b border-white/10 p-6 sm:p-8 lg:border-b-0 lg:border-r">
 
                 <div>
-                  <span className="font-syne text-6xl font-bold tracking-tighter text-white/[0.06] transition duration-500 group-hover:text-amber-300/[0.10] sm:text-7xl">
+                  <span className="font-syne text-6xl font-bold tracking-tighter text-white/[0.06] transition duration-300 group-hover:text-amber-300/[0.10] sm:text-7xl">
                     {certificate.number}
                   </span>
 
@@ -127,7 +110,7 @@ export default function Certificates() {
                 </div>
 
                 {/* Decorative Line */}
-                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-amber-300 transition-all duration-700 group-hover:w-full" />
+                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-amber-300 transition-all duration-500 group-hover:w-full" />
               </div>
 
               {/* Right Content */}
@@ -144,7 +127,7 @@ export default function Certificates() {
                   </p>
 
                   <div className="mt-5 flex items-center gap-2 text-sm text-gray-500">
-                    <FiCalendar className="shrink-0 text-amber-300" />
+                    <FiCalendar className="text-amber-300" />
                     {certificate.date}
                   </div>
 
@@ -160,19 +143,17 @@ export default function Certificates() {
                 {/* Certificate Preview */}
                 <div className="order-1 overflow-hidden rounded-xl border border-white/10 bg-[#0d1018] md:order-2 md:w-[260px]">
                   <div className="relative aspect-[4/3]">
-                    <Image
+                    <img
                       src={certificate.image}
                       alt={`${certificate.title} certificate`}
-                      fill
-                      sizes="(max-width: 768px) 100vw, 260px"
-                      className="object-cover transition duration-500 group-hover:scale-[1.03]"
+                      className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.03]"
                     />
 
                     <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
                   </div>
                 </div>
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
       </div>

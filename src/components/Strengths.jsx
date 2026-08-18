@@ -1,6 +1,6 @@
+
 "use client";
 
-import { motion } from "framer-motion";
 import {
   FiMonitor,
   FiSmartphone,
@@ -56,17 +56,12 @@ export default function Strengths() {
       className="relative overflow-hidden px-6 py-24 sm:py-28 lg:py-32"
     >
       {/* Background Glow */}
-      <div className="absolute right-0 top-1/3 -z-10 h-80 w-80 rounded-full bg-amber-300/[0.04] blur-[130px]" />
+      <div className="pointer-events-none absolute right-0 top-1/3 -z-10 h-80 w-80 rounded-full bg-amber-300/[0.04] blur-[130px]" />
 
       <div className="mx-auto max-w-7xl">
+
         {/* Heading */}
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
-        >
+        <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
             What I Bring
           </p>
@@ -81,20 +76,13 @@ export default function Strengths() {
             A few things I focus on while building useful and polished web
             experiences.
           </p>
-        </motion.div>
+        </div>
 
         {/* Cards */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {strengths.map((strength, index) => (
-            <motion.div
+            <div
               key={strength.title}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{
-                duration: 0.5,
-                delay: index * 0.08,
-              }}
               className="group relative overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] p-6 transition-all duration-300 hover:-translate-y-1 hover:border-amber-300/25 hover:bg-white/[0.04]"
             >
               {/* Number */}
@@ -118,10 +106,11 @@ export default function Strengths() {
 
               {/* Bottom Line */}
               <div className="mt-6 h-px w-0 bg-gradient-to-r from-amber-300 to-transparent transition-all duration-500 group-hover:w-full" />
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
     </section>
   );
 }
+

@@ -1,6 +1,5 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import {
   FiExternalLink,
@@ -20,14 +19,9 @@ export default function Projects() {
       <div className="absolute left-0 top-1/4 -z-10 h-80 w-80 rounded-full bg-amber-300/[0.04] blur-[130px]" />
 
       <div className="mx-auto max-w-7xl">
+
         {/* Heading */}
-        <motion.div
-          initial={false}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.6 }}
-          className="mb-14 text-center"
-        >
+        <div className="mb-14 text-center">
           <p className="mb-3 text-sm font-medium uppercase tracking-[0.3em] text-amber-300">
             What I've Built
           </p>
@@ -42,21 +36,14 @@ export default function Projects() {
             A selection of projects I've built while exploring modern web
             development and creating practical digital experiences.
           </p>
-        </motion.div>
+        </div>
 
         {/* Projects */}
-        <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-2">
-          {projects.map((project, index) => (
-            <motion.article
+        <div className="grid gap-7 md:grid-cols-2">
+          {projects.map((project) => (
+            <article
               key={project.title}
-              initial={false}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.1 }}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.08,
-              }}
-              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition-all duration-500 hover:-translate-y-2 hover:border-amber-300/25"
+              className="group overflow-hidden rounded-3xl border border-white/10 bg-white/[0.02] transition-all duration-300 hover:-translate-y-2 hover:border-amber-300/25"
             >
               {/* Image */}
               <div className="relative aspect-video overflow-hidden bg-[#0a0d15]">
@@ -64,8 +51,8 @@ export default function Projects() {
                   src={project.image}
                   alt={`${project.title} project screenshot`}
                   fill
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px"
-                  className="object-cover transition duration-700 group-hover:scale-105"
+                  className="object-cover transition duration-500 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
 
                 {/* Image Overlay */}
@@ -79,11 +66,10 @@ export default function Projects() {
 
               {/* Content */}
               <div className="p-5 sm:p-6">
-                <div className="flex items-start justify-between gap-4">
-                  <h3 className="font-syne text-xl font-bold text-white sm:text-2xl">
-                    {project.title}
-                  </h3>
-                </div>
+
+                <h3 className="font-syne text-xl font-bold text-white sm:text-2xl">
+                  {project.title}
+                </h3>
 
                 <p className="mt-3 text-sm leading-6 text-gray-500 sm:text-base">
                   {project.description}
@@ -123,10 +109,12 @@ export default function Projects() {
                     GitHub
                   </a>
                 </div>
+
               </div>
-            </motion.article>
+            </article>
           ))}
         </div>
+
       </div>
     </section>
   );
