@@ -1,4 +1,3 @@
-
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -169,14 +168,14 @@ export default function Hero() {
                             </div>
 
                             {/* Image */}
-                            <Image
+                            {/* <Image
                                 src="/hero.jpg"
                                 alt="Armaan Mansuri"
                                 fill
                                 priority
                                 sizes="(max-width: 640px) 280px, (max-width: 1024px) 350px, 380px"
                                 className="object-cover object-[center_35%] transition duration-700 hover:scale-[1.03]"
-                            />
+                            /> */}
 
                             {/* Image Overlay */}
                             <div className="absolute inset-0 bg-gradient-to-t from-[#080b12] via-transparent to-transparent opacity-70" />
