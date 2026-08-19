@@ -15,7 +15,19 @@ import {
   SiDjango,
   SiTailwindcss,
   SiMysql,
+  SiBootstrap,
+  SiFigma,
 } from "react-icons/si";
+
+import {
+  FiTool,
+  FiMessageCircle,
+  FiUsers,
+  FiRefreshCw,
+  FiClock,
+  FiTarget,
+  FiAward,
+} from "react-icons/fi";
 
 const skillCategories = [
   {
@@ -99,6 +111,66 @@ const skillCategories = [
         level: "Intermediate",
         color: "#FFFFFF",
       },
+      {
+        name: "Bootstrap",
+        icon: <SiBootstrap />,
+        level: "Intermediate",
+        color: "#7952B3",
+      },
+      {
+        name: "Figma",
+        icon: <SiFigma />,
+        level: "Intermediate",
+        color: "#F24E1E",
+      },
+    ],
+  },
+
+  {
+    title: "Soft Skills",
+    skills: [
+      {
+        name: "Problem Solving",
+        icon: <FiTool />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Communication",
+        icon: <FiMessageCircle />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Teamwork",
+        icon: <FiUsers />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Adaptability",
+        icon: <FiRefreshCw />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Time Management",
+        icon: <FiClock />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Attention to Detail",
+        icon: <FiTarget />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
+      {
+        name: "Leadership",
+        icon: <FiAward />,
+        level: "Strong",
+        color: "#FCD34D",
+      },
     ],
   },
 ];
@@ -130,8 +202,8 @@ export default function Skills() {
           <div className="mx-auto mt-5 h-px w-16 bg-gradient-to-r from-transparent via-amber-300 to-transparent" />
 
           <p className="mx-auto mt-6 max-w-2xl text-sm leading-7 text-gray-500 sm:text-base">
-            Technologies and tools I use to build modern, responsive and
-            user-focused web applications.
+            Technologies, tools and professional skills I use to build
+            modern, responsive and user-focused web applications.
           </p>
         </div>
 
@@ -194,3 +266,4 @@ export default function Skills() {
     </section>
   );
 }
+
