@@ -28,3 +28,22 @@ body {
 .font-syne {
   font-family: var(--font-syne), sans-serif;
 }
+
+/* Mobile performance optimization */
+@media (max-width: 768px) {
+  /* Disable expensive backdrop blur on mobile */
+  [class*="backdrop-blur"] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+
+  /* Disable large decorative blur effects on mobile */
+  [class*="blur-"] {
+    filter: none !important;
+  }
+
+  /* Stop decorative spinning animation on mobile */
+  [class*="animate-[spin"] {
+    animation: none !important;
+  }
+}
